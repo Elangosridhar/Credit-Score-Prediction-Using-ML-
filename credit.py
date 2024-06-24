@@ -1,7 +1,8 @@
 import streamlit as st
 import numpy as np
-import joblib
+import pickle
 import os
+
 
 # Custom CSS for styling
 st.markdown("""
@@ -40,14 +41,15 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Load your trained model
-model_filename = 'Credit_score/rand_for_model.joblib'
+model_filename = 'rand_for_model.pkl'
 
 # Check if the model file exists
 if not os.path.exists(model_filename):
     st.error(f"Model file '{model_filename}' not found. Please ensure it is in the correct directory.")
 else:
     try:
-        model = joblib.load(model_filename)
+        with open(model_filename, 'rb') as file:
+            model = pickle.load(file)
         model_loaded = True
     except Exception as e:
         st.error(f"Error loading model: {e}")
