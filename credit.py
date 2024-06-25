@@ -3,11 +3,7 @@ import numpy as np
 import pickle
 import gzip
 import os
-# from sklearn.compose import ColumnTransformer
-# from sklearn.preprocessing import StandardScaler
-# from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-
+import sklearn
 # Custom CSS for styling
 st.markdown("""
     <style>
