@@ -3,7 +3,8 @@ import numpy as np
 import pickle
 import gzip
 import os
-import sklearn
+
+
 # Custom CSS for styling
 st.markdown("""
     <style>
