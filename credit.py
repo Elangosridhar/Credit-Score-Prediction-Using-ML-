@@ -3,7 +3,6 @@ import numpy as np
 import pickle
 import os
 
-
 # Custom CSS for styling
 st.markdown("""
     <style>
@@ -74,8 +73,7 @@ with st.form(key='credit_score_form'):
 
     submit_button = st.form_submit_button(label='Predict Credit Score')
 
-
-    # Convert credit mix to numerical value
+# Convert credit mix to numerical value
 credit_mix_dict = {"Bad": 0, "Standard": 1, "Good": 2}
 credit_mix_value = credit_mix_dict[credit_mix]
 
@@ -90,9 +88,9 @@ if submit_button:
         result = model.predict(features)
         st.write(f"Predicted Credit Score = {result[0]}")
         
-        if result == 0:
+        if result == 2:
             st.success("Credit score: Good")
-        elif result == 1:
+        elif result == 0:
             st.error("Credit score: Poor")
         else:
             st.warning("Credit score: Standard")
