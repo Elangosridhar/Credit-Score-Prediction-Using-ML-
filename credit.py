@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pickle
+import gzip
 import os
 
 # Custom CSS for styling
@@ -40,14 +41,14 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Load your trained model
-model_filename = 'rand_for_model.pkl.gz'
+model_filename = 'random_forest_model.pkl.gz'
 
 # Check if the model file exists
 if not os.path.exists(model_filename):
     st.error(f"Model file '{model_filename}' not found. Please ensure it is in the correct directory.")
 else:
     try:
-        with open(model_filename, 'rb') as file:
+        with gzip.open(model_filename, 'rb') as file:
             model = pickle.load(file)
         model_loaded = True
     except Exception as e:
