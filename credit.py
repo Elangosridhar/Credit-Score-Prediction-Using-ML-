@@ -3,10 +3,9 @@ import numpy as np
 import pickle
 import gzip
 import os
-from sklearn.preprocessing import LabelEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
+# from sklearn.compose import ColumnTransformer
+# from sklearn.preprocessing import StandardScaler
+# from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
 # Custom CSS for styling
