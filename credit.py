@@ -40,7 +40,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Load your trained model
-model_filename = 'rand_for_model.pkl'
+model_filename = 'rand_for_model.pkl.gz'
 
 # Check if the model file exists
 if not os.path.exists(model_filename):
